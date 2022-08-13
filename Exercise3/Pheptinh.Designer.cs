@@ -31,12 +31,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.checkEnterA = new System.Windows.Forms.Label();
+            this.checkEnterB = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.caculateBox = new System.Windows.Forms.ComboBox();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.doButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.resultBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -62,39 +67,47 @@
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.Location = new System.Drawing.Point(263, 112);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(243, 25);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
+            this.textBox1.MouseHover += new System.EventHandler(this.textBox1_MouseHover);
             // 
-            // label3
+            // checkEnterA
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(527, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 30);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "*";
+            this.checkEnterA.AutoSize = true;
+            this.checkEnterA.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkEnterA.Location = new System.Drawing.Point(527, 112);
+            this.checkEnterA.Name = "checkEnterA";
+            this.checkEnterA.Size = new System.Drawing.Size(22, 30);
+            this.checkEnterA.TabIndex = 3;
+            this.checkEnterA.Text = "*";
             // 
-            // label4
+            // checkEnterB
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(527, 180);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(22, 30);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "*";
+            this.checkEnterB.AutoSize = true;
+            this.checkEnterB.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkEnterB.Location = new System.Drawing.Point(527, 180);
+            this.checkEnterB.Name = "checkEnterB";
+            this.checkEnterB.Size = new System.Drawing.Size(22, 30);
+            this.checkEnterB.TabIndex = 6;
+            this.checkEnterB.Text = "*";
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox2.Location = new System.Drawing.Point(263, 180);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(243, 25);
             this.textBox2.TabIndex = 5;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.MouseLeave += new System.EventHandler(this.textBox2_MouseLeave);
+            this.textBox2.MouseHover += new System.EventHandler(this.textBox2_MouseHover);
             // 
             // label5
             // 
@@ -114,37 +127,95 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(144, 25);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Chọn phép tinh";
+            this.label6.Text = "Chọn phép tính";
             // 
-            // comboBox1
+            // caculateBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Cộng (+)",
-            "Trừ (-)",
-            "Nhân (*)",
-            "Chia (/)"});
-            this.comboBox1.Location = new System.Drawing.Point(385, 270);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 8;
+            this.caculateBox.FormattingEnabled = true;
+            this.caculateBox.Items.AddRange(new object[] {
+            "Cộng",
+            "Trừ",
+            "Nhân",
+            "Chia"});
+            this.caculateBox.Location = new System.Drawing.Point(385, 270);
+            this.caculateBox.Name = "caculateBox";
+            this.caculateBox.Size = new System.Drawing.Size(121, 23);
+            this.caculateBox.TabIndex = 8;
+            // 
+            // nextButton
+            // 
+            this.nextButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nextButton.Location = new System.Drawing.Point(420, 340);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(86, 33);
+            this.nextButton.TabIndex = 11;
+            this.nextButton.Text = "Next";
+            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
+            // 
+            // resetButton
+            // 
+            this.resetButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.resetButton.Location = new System.Drawing.Point(263, 340);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(86, 33);
+            this.resetButton.TabIndex = 12;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
+            // doButton
+            // 
+            this.doButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.doButton.Location = new System.Drawing.Point(105, 340);
+            this.doButton.Name = "doButton";
+            this.doButton.Size = new System.Drawing.Size(86, 33);
+            this.doButton.TabIndex = 13;
+            this.doButton.Text = "Thực hiện";
+            this.doButton.UseVisualStyleBackColor = true;
+            this.doButton.Click += new System.EventHandler(this.doButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(105, 413);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 21);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "-->Kết quả : ";
+            // 
+            // resultBox
+            // 
+            this.resultBox.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.resultBox.Location = new System.Drawing.Point(263, 411);
+            this.resultBox.Multiline = true;
+            this.resultBox.Name = "resultBox";
+            this.resultBox.Size = new System.Drawing.Size(161, 25);
+            this.resultBox.TabIndex = 15;
             // 
             // Pheptinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 450);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.resultBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.doButton);
+            this.Controls.Add(this.resetButton);
+            this.Controls.Add(this.nextButton);
+            this.Controls.Add(this.caculateBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.checkEnterB);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.checkEnterA);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Pheptinh";
             this.Text = "Bai1";
+            this.Load += new System.EventHandler(this.Pheptinh_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,11 +226,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label checkEnterA;
+        private System.Windows.Forms.Label checkEnterB;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox caculateBox;
+        private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.Button doButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox resultBox;
     }
 }

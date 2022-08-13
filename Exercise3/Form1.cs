@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Exercise3
@@ -16,7 +10,7 @@ namespace Exercise3
         {
             InitializeComponent();
             check();
-        }   
+        }
 
         private void check()
         {
@@ -34,7 +28,7 @@ namespace Exercise3
             }
             else
             {
-                checkPassLabel.ForeColor= Color.Blue;
+                checkPassLabel.ForeColor = Color.Blue;
             }
         }
 
@@ -109,7 +103,7 @@ namespace Exercise3
         private void exitButton_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Bạn có muốn thoát không ?", "Thông báo", MessageBoxButtons.YesNoCancel);
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
             {
                 this.Close();
             }
@@ -118,10 +112,10 @@ namespace Exercise3
         private void loginButton_Click(object sender, EventArgs e)
         {
             if ((nameBox.Text.Equals("Admin") || nameBox.Text.Equals("admin")) && passBox.Text.Equals("123456"))
-            {
+            {             
                 Pheptinh pheptinh = new Pheptinh();
-                pheptinh.Show();
-                this.Hide();
+                pheptinh.ShowDialog();
+                this.Close();
             }
         }
     }
