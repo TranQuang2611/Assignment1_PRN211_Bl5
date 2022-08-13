@@ -60,6 +60,7 @@
             this.codeBox.Location = new System.Drawing.Point(161, 38);
             this.codeBox.Name = "codeBox";
             this.codeBox.PasswordChar = '*';
+            this.codeBox.ReadOnly = true;
             this.codeBox.Size = new System.Drawing.Size(274, 23);
             this.codeBox.TabIndex = 1;
             // 
@@ -150,6 +151,7 @@
             this.button8.TabIndex = 9;
             this.button8.Text = "#";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -231,7 +233,7 @@
             this.Controls.Add(this.codeBox);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Security Panel";
             this.ResumeLayout(false);
             this.PerformLayout();
 

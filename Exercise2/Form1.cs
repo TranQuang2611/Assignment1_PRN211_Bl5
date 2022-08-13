@@ -71,5 +71,45 @@ namespace Exercise2
         {
             codeBox.Text = "";
         }
+
+        List<Notification> list = new List<Notification>();
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (codeBox.Text.Trim() == "1645" || codeBox.Text.Trim() == "1689")
+            {
+                list.Add(new Notification()
+                {
+                    Time = DateTime.Now,
+                    Text = "Technicians"
+                }); ;
+
+            }
+            else if (codeBox.Text.Trim() == "8345")
+            {
+                list.Add(new Notification()
+                {
+                    Time = DateTime.Now,
+                    Text = "Custodians"
+                });
+            }
+            else if (codeBox.Text.Trim() == "9998" || (Convert.ToInt32(codeBox.Text.Trim()) >= 1006) && Convert.ToInt32(codeBox.Text.Trim()) <= 1008)
+            {
+                list.Add(new Notification()
+                {
+                    Time = DateTime.Now,
+                    Text = "Scientist"
+                });
+            }
+            else
+            {
+                list.Add(new Notification()
+                {
+                    Time = DateTime.Now,
+                    Text = "Restricted Access!"
+                }); ;
+            }
+            accessBox.DataSource = null;
+            accessBox.DataSource = list;
+        }
     }
 }
