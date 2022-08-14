@@ -19,38 +19,39 @@ namespace Exercise4
 
         private void arsenal_CheckedChanged(object sender, EventArgs e)
         {
-            pictureBox1.ImageLocation = @"E:\Summer FPT 2022\Assignment1\Exercise4\Img\arsenal.jpg";         
+            pictureBox1.ImageLocation = @"..\..\..\Img\arsenal.jpg"; 
+            
         }
 
         private void real_CheckedChanged(object sender, EventArgs e)
         {
-            pictureBox1.ImageLocation = @"E:\Summer FPT 2022\Assignment1\Exercise4\Img\real.png";
+            pictureBox1.ImageLocation = @"..\..\..\Img\real.png";
         }
 
         private void mu_CheckedChanged(object sender, EventArgs e)
         {
-            pictureBox1.ImageLocation = @"E:\Summer FPT 2022\Assignment1\Exercise4\Img\mu.png";
+            pictureBox1.ImageLocation = @"..\..\..\Img\mu.png";
         }
 
 
         private void barcelona_CheckedChanged(object sender, EventArgs e)
         {
-            pictureBox1.ImageLocation = @"E:\Summer FPT 2022\Assignment1\Exercise4\Img\barca.png";
+            pictureBox1.ImageLocation = @"..\..\..\Img\barca.png";
         }
 
         private void juve_CheckedChanged(object sender, EventArgs e)
         {
-            pictureBox1.ImageLocation = @"E:\Summer FPT 2022\Assignment1\Exercise4\Img\juve.png";
+            pictureBox1.ImageLocation = @"..\..\..\Img\juve.png";
         }
 
         private void psg_CheckedChanged(object sender, EventArgs e)
         {
-            pictureBox1.ImageLocation = @"E:\Summer FPT 2022\Assignment1\Exercise4\Img\psg.png";
+            pictureBox1.ImageLocation = @"..\..\..\Img\psg.png";
         }
 
         private void bayern_CheckedChanged(object sender, EventArgs e)
         {
-            pictureBox1.ImageLocation = @"E:\Summer FPT 2022\Assignment1\Exercise4\Img\bayern.png";
+            pictureBox1.ImageLocation = @"..\..\..\Img\bayern.png";
         }
 
         private void exitButton_Click(object sender, EventArgs e)
