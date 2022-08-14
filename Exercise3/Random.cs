@@ -25,21 +25,24 @@ namespace Exercise3
             {
                 MessageBox.Show("Đã hết số để chọn", "Thông báo");
             }
-            System.Random random = new();
-            int randomNumber = random.Next(1, total + 1);
-            if (!list.Contains(randomNumber))
-            {
-                list.Add(randomNumber);
-            }
             else
             {
-                while (list.Contains(randomNumber))
+                System.Random random = new();
+                int randomNumber = random.Next(1, total + 1);
+                if (!list.Contains(randomNumber))
                 {
-                    randomNumber = random.Next(1, total + 1);
+                    list.Add(randomNumber);
                 }
-                list.Add(randomNumber);
-            }
-            resultLabel.Text = randomNumber.ToString();
+                else
+                {
+                    while (list.Contains(randomNumber))
+                    {
+                        randomNumber = random.Next(1, total + 1);
+                    }
+                    list.Add(randomNumber);
+                }
+                resultLabel.Text = randomNumber.ToString();
+            }           
             //while (list.Count() < total)
             //{            
             //    int randomNumber = random.Next(1, total + 1);
@@ -54,7 +57,11 @@ namespace Exercise3
             //        break;
             //    }
             //}
+        }
 
+        private void number_ValueChanged(object sender, EventArgs e)
+        {
+            list.Clear();
         }
     }
 }

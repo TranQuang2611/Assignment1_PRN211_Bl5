@@ -37,15 +37,15 @@ namespace Exercise3
         {
             bBox.BackColor = Color.White;
         }
-       
+
         private void aBox_TextChanged(object sender, EventArgs e)
-        {         
+        {
             Regex regex = new Regex("^[-+]?\\d*$");
             if (!regex.IsMatch(aBox.Text))
             {
                 aBox.Text = "";
             }
-            
+
         }
 
         private void bBox_TextChanged(object sender, EventArgs e)
@@ -77,34 +77,56 @@ namespace Exercise3
         {
             if (!string.IsNullOrEmpty(aBox.Text) && !string.IsNullOrEmpty(bBox.Text))
             {
-                int a = Convert.ToInt32(aBox.Text);
-                int b = Convert.ToInt32(bBox.Text);
-                if (option1Button.Checked)
+                try
                 {
-                    if(a == 0)
+                    int a = Convert.ToInt32(aBox.Text);
+                    int b = Convert.ToInt32(bBox.Text);
+                    if (option1Button.Checked)
                     {
-                        if(b == 0)
+                        if (a == 0)
                         {
-                            resultLabel.Text = "Phương trình vô số nghiệm";
+                            if (b == 0)
+                            {
+                                resultLabel.Text = "Phương trình vô số nghiệm";
+                            }
+                            else
+                            {
+                                resultLabel.Text = "Phương trình vô nghiệm";
+                            }
                         }
                         else
                         {
-                            resultLabel.Text = "Phương trình vô nghiệm";
+                            resultLabel.Text = ((float)(-b) / a).ToString();
                         }
                     }
-                    else
+                    if (option2Button.Checked)
                     {
-                        resultLabel.Text = ((float)(-b)/a).ToString();
+                        if(a>0 && b > 0)
+                        {
+                            resultLabel.Text = UCLN(a, b).ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nhap a va b lon hon 0");
+                        }
+                        
+                    }
+                    if (option3Button.Checked)
+                    {
+                        if (a > 0 && b > 0)
+                        {
+                            resultLabel.Text = ((a * b) / UCLN(a, b)).ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nhap a va b lon hon 0");
+                        }                        
                     }
                 }
-                if (option2Button.Checked)
+                catch (Exception)
                 {
-                   
-                    resultLabel.Text = UCLN(a, b).ToString(); 
-                }
-                if (option3Button.Checked)
-                {
-                    resultLabel.Text = ((a*b)/UCLN(a,b)).ToString();
+
+                    MessageBox.Show("Nhap a va b la so nguyen");
                 }
             }
         }

@@ -52,6 +52,7 @@
             this.number.Name = "number";
             this.number.Size = new System.Drawing.Size(120, 30);
             this.number.TabIndex = 1;
+            this.number.ValueChanged += new System.EventHandler(this.number_ValueChanged);
             // 
             // button1
             // 
@@ -71,9 +72,9 @@
             this.resultLabel.ForeColor = System.Drawing.Color.Blue;
             this.resultLabel.Location = new System.Drawing.Point(178, 114);
             this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(112, 54);
+            this.resultLabel.Size = new System.Drawing.Size(0, 54);
             this.resultLabel.TabIndex = 3;
-            this.resultLabel.Text = "NGU";
+            this.resultLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Random
             // 
